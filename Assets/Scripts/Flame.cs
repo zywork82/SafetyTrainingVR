@@ -13,7 +13,7 @@ public class Flame : MonoBehaviour
     [SerializeField] private float regenDelay = 2.5f;
     [SerializeField] private float regenRate = 0.1f;
 
-    private bool isLit = true;
+    [SerializeField] public bool isLit = true;
 
     private void Start() 
     {
