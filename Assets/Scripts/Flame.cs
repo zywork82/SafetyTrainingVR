@@ -29,14 +29,14 @@ public class Flame : MonoBehaviour
     {
         // To regenerate flame
         if (isLit && currentIntensity < 1.0f && Time.time - timeLastWatered >= regenDelay) {
-            print("[Flame.cs] isLit is curently: " + isLit);
+            // print("[Flame.cs] isLit is curently: " + isLit);
             currentIntensity += regenRate * Time.deltaTime;
             ChangeIntensity();
         }
     }
 
     public bool TryExtinguish(float amount) {
-        print("[Flame.cs] Trying to extinguish");
+        // print("[Flame.cs] Trying to extinguish");
         timeLastWatered = Time.time;
         currentIntensity -= amount;
         ChangeIntensity();
@@ -47,7 +47,7 @@ public class Flame : MonoBehaviour
     private void ChangeIntensity()
     {
         for (int i = 0; i < flameParticleSystems.Length; i++) {
-            print("[Flame.cs] Changing intensity");
+            // print("[Flame.cs] Changing intensity");
             var emission = flameParticleSystems[i].emission;
             emission.rateOverTime = currentIntensity * startIntensities[i];
         }
