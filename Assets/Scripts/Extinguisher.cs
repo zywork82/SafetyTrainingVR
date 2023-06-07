@@ -16,10 +16,10 @@ public class Extinguisher : MonoBehaviour
         float leftActivateIntensity = leftActivate.action.ReadValue<float>();
         bool isPress = rightActivateIntensity >= 0.3 || leftActivateIntensity >= 0.3;
 
-        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out RaycastHit hit, 20f) && hit.collider.TryGetComponent(out Flame flame) && isPress) {
-            bool isLit = flame.TryExtinguish(amountExtinguishedPerSecond * Time.deltaTime);
-            if (isLit) {
-                extSmoke.SetActive(true);
+        if (isPress) {
+            extSmoke.SetActive(true);
+            if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out RaycastHit hit, 20f) && hit.collider.TryGetComponent(out Flame flame)) {
+                bool isLit = flame.TryExtinguish(amountExtinguishedPerSecond * Time.deltaTime);
             } 
         } else {
             extSmoke.SetActive(false);
