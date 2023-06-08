@@ -11,7 +11,7 @@ public class MissionManager : MonoBehaviour
 
     private List<Mission> missions = new List<Mission>();
 
-    private void Start()
+    void Start()
     {
         // Add your missions to the list
         missions.Add(new Mission("Find the fire extinguisher", "Locate the fire extinguisher in the game room"));
@@ -21,7 +21,7 @@ public class MissionManager : MonoBehaviour
         UpdateMissionPanel();
 
         // Start the timer
-        timerManager.StartTimer();
+        // timerManager.StartTimer();
     }
 
     private void UpdateMissionPanel()
@@ -32,7 +32,7 @@ public class MissionManager : MonoBehaviour
             if (mission.isCompleted)
             {
                 missionDesc.text += $"<s>{mission.missionName}</s>\n";
-                mission.completionTimeText = timerManager.CalculateCompletionTime();
+                // mission.completionTimeText = timerManager.CalculateCompletionTime();
             }
             else
             {
@@ -41,10 +41,11 @@ public class MissionManager : MonoBehaviour
         }
     }
 
-    public void CompleteMissionByName(string missionName)
+    public void CompleteMissionById(int Id)
     {
-        // Find the mission with the specified name
-        Mission mission = missions.Find(m => m.missionName == missionName);
+        // Find the mission with the specified id
+        //in the list of "missions" find the Id that belongs to what is called
+        Mission mission = missions.Find(m => m.Id == Id);
         if (mission != null)
         {
             // Complete the mission
@@ -54,12 +55,17 @@ public class MissionManager : MonoBehaviour
             UpdateMissionPanel();
 
             // Start the timer again
-            timerManager.StartTimer();
+            // timerManager.StartTimer();
         }
     }
 
     public class Mission
+    //every new misssion will have all this values
     {
+        //static int so this mission Id only change inside this class, asssigning original mission Id to 0
+        public static int missionId = 0;
+        //Id is just a variable that can be changed
+        public int Id;
         public string missionName;
         public string missionDescription;
         public bool isCompleted;
@@ -67,10 +73,12 @@ public class MissionManager : MonoBehaviour
 
         public Mission(string name, string description)
         {
+            //Id number is called and changed here
+            Id = Mission.missionId++;
             missionName = name;
             missionDescription = description;
             isCompleted = false;
-            completionTimeText = ""; // Initialize the completion time text
+            // completionTimeText = ""; // Initialize the completion time text
         }
 
         public void CompleteMission()

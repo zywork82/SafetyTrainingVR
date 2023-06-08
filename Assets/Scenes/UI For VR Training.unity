@@ -1312,6 +1312,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CheckedCheckboxPrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 3782272483246422590, guid: 33ed6b27f2fcf4b7285c93519ba43645,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9181704438557564538, guid: 33ed6b27f2fcf4b7285c93519ba43645,
         type: 3}
       propertyPath: m_Name
@@ -1406,7 +1411,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1715006166}
+  m_Material: {fileID: 1664128096}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -2121,6 +2126,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CheckboxPrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 3782272483246422590, guid: bde714d1e19774990976c0828c9b80e0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8894814401618666765, guid: bde714d1e19774990976c0828c9b80e0,
         type: 3}
       propertyPath: m_UseSpriteMesh
@@ -2759,7 +2769,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   missionPanel: {fileID: 1503274998}
-  missionDesc: {fileID: 0}
   fireExtinguisher: {fileID: 1321501507}
 --- !u!1 &851010802
 GameObject:
@@ -5039,7 +5048,7 @@ GameObject:
   - component: {fileID: 1503274999}
   - component: {fileID: 1503275001}
   - component: {fileID: 1503275000}
-  - component: {fileID: 1503275003}
+  - component: {fileID: 1503275006}
   - component: {fileID: 1503275002}
   - component: {fileID: 1503275004}
   - component: {fileID: 1503275005}
@@ -5126,20 +5135,6 @@ MonoBehaviour:
   checkboxImage: {fileID: 628504389}
   checkedSprite: {fileID: 21300000, guid: d3d9820cd34034d9eb4cc362edb6cd1e, type: 3}
   uncheckedSprite: {fileID: 21300000, guid: 324cf973229164d789e4df1d36e7f9f7, type: 3}
---- !u!114 &1503275003
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1503274998}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94eb8b395daa5423fbde1597c60e4f71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  checklistItemToggles:
-  - {fileID: 0}
 --- !u!114 &1503275004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5152,7 +5147,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e091252f895264050ab8930440fdff9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  missionText: {fileID: 0}
 --- !u!114 &1503275005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5167,6 +5161,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   missionPanel: {fileID: 1503274998}
   missionDesc: {fileID: 325762054}
+  timerManager: {fileID: 0}
+--- !u!114 &1503275006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1503274998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52aa7e7d0291d4aa7a1e9e0b7cd618d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  missionPanel: {fileID: 1503274998}
+  missionDesc: {fileID: 325762054}
+  timerManager: {fileID: 0}
 --- !u!1 &1516765842
 GameObject:
   m_ObjectHideFlags: 0
@@ -5731,41 +5741,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65847589f926b734d9eaed6e25f0046b, type: 3}
---- !u!1 &1692863302
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1692863303}
-  m_Layer: 0
-  m_Name: Camera Offset
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1692863303
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1692863302}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.1176, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1549226687}
-  - {fileID: 1877853390}
-  - {fileID: 811169359}
-  m_Father: {fileID: 1196730992}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!21 &1715006166
+--- !u!21 &1664128096
 Material:
   serializedVersion: 8
   m_ObjectHideFlags: 0
@@ -5801,6 +5777,40 @@ Material:
     m_Colors:
     - _WidthHeightRadius: {r: 578.01, g: 356, b: 50, a: 0}
   m_BuildTextureStacks: []
+--- !u!1 &1692863302
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1692863303}
+  m_Layer: 0
+  m_Name: Camera Offset
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1692863303
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1692863302}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.1176, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1549226687}
+  - {fileID: 1877853390}
+  - {fileID: 811169359}
+  m_Father: {fileID: 1196730992}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1732775730
 GameObject:
   m_ObjectHideFlags: 0
@@ -5955,7 +5965,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1746175764
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6086,6 +6096,42 @@ Animator:
     type: 3}
   m_PrefabInstance: {fileID: 627274708}
   m_PrefabAsset: {fileID: 0}
+--- !u!21 &1814207793
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UI/RoundedCorners/RoundedCorners
+  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _ColorMask: 15
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _UseUIAlphaClip: 0
+    m_Colors:
+    - _WidthHeightRadius: {r: 578.01, g: 356, b: 50, a: 0}
+  m_BuildTextureStacks: []
 --- !u!1 &1857364888
 GameObject:
   m_ObjectHideFlags: 0
@@ -6167,7 +6213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2086813144}
+  m_Material: {fileID: 1814207793}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -7068,39 +7114,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!21 &2086813144
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: UI/RoundedCorners/RoundedCorners
-  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _ColorMask: 15
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    - _UseUIAlphaClip: 0
-    m_Colors:
-    - _WidthHeightRadius: {r: 578.01, g: 356, b: 50, a: 0}
-  m_BuildTextureStacks: []

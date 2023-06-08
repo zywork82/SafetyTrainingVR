@@ -7,7 +7,7 @@ using TMPro;
 public class GameManager : MonoBehaviour
 {
     public GameObject missionPanel;
-    public MissionPanelUI missionDesc;
+    // public MissionPanelUI missionDesc;
     public GameObject fireExtinguisher;
 
     private bool fireExtinguisherPickedUp = false;
@@ -31,22 +31,22 @@ public class GameManager : MonoBehaviour
 
     private void UpdateMissionPanelText()
     {
-        if (missionDesc != null)
-        {
+        // if (missionDesc != null)
+        // {
             // Update the mission panel UI with the current task
-            missionDesc.UpdateTaskText("Find the fire extinguisher");
+            // missionDesc.UpdateTaskText("Find the fire extinguisher");
 
             // You can add more missions/tasks here
-        }
+        // }
     }
 
     public void CompleteMission(string missionName)
     {
-        if (missionDesc != null)
-        {
+        // if (missionDesc != null)
+        // {
             // Mark the mission as completed in the UI
-            missionDesc.StrikeThroughText();
-        }
+            // missionDesc.StrikeThroughText();
+        // }
     }
 
     // Call this method when the fire extinguisher is picked up

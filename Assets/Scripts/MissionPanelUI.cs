@@ -6,20 +6,27 @@ using TMPro;
 
 public class MissionPanelUI : MonoBehaviour
 {
-    public TMP_Text missionDesc;
+    // public TMP_Text missionDesc;
 
-    public void UpdateTaskText(string taskText)
-    {
-        missionDesc.text = taskText;
-    }
+    // public void Start() {
+    //     missionDesc.text = "hi";
+    //     print("MissionPaneUI Initialised");
+    //     // CompleteMission("");
+    // }
 
-    public void StrikeThroughText()
-    {
-        missionDesc.text = $"<s>{missionDesc.text}</s>";
-    }
+    // public void UpdateTaskText(string taskText)
+    // {
+    //     missionDesc.text = taskText;
+    // }
 
-    public void CompleteMission(string missionName)
-    {
-        StrikeThroughText();
-    }
+    // public void StrikeThroughText()
+    // {
+    //     missionDesc.text = "<s>{missionDesc.text}</s>";
+    //     print("strikethrough");
+    // }
+
+    // public void CompleteMission(string missionName)
+    // {
+    //     StrikeThroughText();
+    // }
 }
