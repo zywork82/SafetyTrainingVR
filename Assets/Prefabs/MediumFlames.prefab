@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2941341906250523129}
   - component: {fileID: 2930564844194693065}
   - component: {fileID: 6550422517586366566}
+  - component: {fileID: 6550422517586366567}
   m_Layer: 0
   m_Name: MediumFlames
   m_TagString: Untagged
@@ -4842,6 +4843,22 @@ MonoBehaviour:
   flameParticleSystems:
   - {fileID: 2941341906250523129}
   - {fileID: 5034676422905822062}
+  regenDelay: 2.5
+  regenRate: 0.1
+  isLit: 1
+--- !u!135 &6550422517586366567
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3056590708810157927}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.25
+  m_Center: {x: 0.07506561, y: -0.08919313, z: -0.000000010632635}
 --- !u!1001 &5124247925533212522
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4859,15 +4876,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4508696319873668, guid: 73767e07adddc394d82b994801f89bbb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.0895884
       objectReference: {fileID: 0}
     - target: {fileID: 4508696319873668, guid: 73767e07adddc394d82b994801f89bbb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.33395284
       objectReference: {fileID: 0}
     - target: {fileID: 4508696319873668, guid: 73767e07adddc394d82b994801f89bbb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.39999968
       objectReference: {fileID: 0}
     - target: {fileID: 4508696319873668, guid: 73767e07adddc394d82b994801f89bbb, type: 3}
       propertyPath: m_LocalRotation.w
