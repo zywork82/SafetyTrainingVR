@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HUDChecklistManager : MonoBehaviour
+public class HeadsUpDisplayManager : MonoBehaviour
 {
     // Singleton instance
-    public static HUDChecklistManager Instance { get; private set; }
+    public static HeadsUpDisplayManager Instance { get; private set; }
 
     // ChecklistItem class
     public class ChecklistItem
