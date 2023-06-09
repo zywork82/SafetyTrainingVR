@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class Extinguisher : MonoBehaviour
 {
@@ -11,10 +12,36 @@ public class Extinguisher : MonoBehaviour
     public InputActionProperty leftActivate;
     public InputActionProperty rightActivate;
 
+    private XRGrabInteractable grabInteractable;
+    private XRBaseInteractor currentInteractor;
+
+    private bool isGrabbed = false;
+
+    void Start() {
+        // rightActivate.action.Enable();
+    }
+
+    private void Awake()
+    {
+        grabInteractable = GetComponent<XRGrabInteractable>();
+        grabInteractable.onSelectEnter.AddListener(OnGrabbed);
+        // grabInteractable.onSelectExit.AddListener(OnReleased);
+    }
+
+    private void OnGrabbed(XRBaseInteractor interactor)
+    {
+        currentInteractor = interactor;
+
+        bool isCorrectObject = (grabInteractable.name == gameObject.name);
+        bool isRightHand = (currentInteractor.name == "RightHand Controller");
+        isGrabbed = isCorrectObject && isRightHand;
+        rightActivate.action.Disable();
+        Debug.Log("isGrabbed is: " + isGrabbed);
+    }
+ 
     void Update() {
-        float rightActivateIntensity = rightActivate.action.ReadValue<float>();
         float leftActivateIntensity = leftActivate.action.ReadValue<float>();
-        bool isPress = rightActivateIntensity >= 0.3 || leftActivateIntensity >= 0.3;
+        bool isPress = leftActivateIntensity >= 0.3;
 
         if (isPress) {
             extSmoke.SetActive(true);
@@ -23,6 +50,14 @@ public class Extinguisher : MonoBehaviour
             } 
         } else {
             extSmoke.SetActive(false);
+        }
+    }
+
+    void OnTriggerEnter(Collider other) {
+        if (other.tag == "Player") {
+            // Tell mission manager complete mission 1
+            print("collided with player");
+            FindObjectOfType<MissionManager>().isFireExtinguisherPickedUp = true;
         }
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class uiControllers : MonoBehaviour
+public class UIControllers : MonoBehaviour
 {
     public GameObject controlsPanel;
     public GameObject trainingStartInterface;
