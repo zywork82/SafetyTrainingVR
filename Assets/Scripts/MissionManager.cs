@@ -34,7 +34,7 @@ public class MissionManager : MonoBehaviour
     }
 
     // Mission 1
-    public void FireExtinguisherPickedUp()
+    public void SetFireExtinguisherPickedUp()
     {
         print("fire extinguisher grabbed");
         isFireExtinguisherPickedUp = true;
