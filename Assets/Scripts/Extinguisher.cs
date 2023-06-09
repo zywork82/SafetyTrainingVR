@@ -31,8 +31,11 @@ public class Extinguisher : MonoBehaviour
         // grabInteractable.onSelectExit.AddListener(OnReleased);
     }
 
+    /*
+        Initialise Left or Right hand in using Extinguisher.
+        Note: Same hand used to press the lever and grab the fire extinguisher.
+    */
     void Start() {
-        // Initialise Left or Right hand in using Extinguisher
         grabHand = LRHand == 0 ? leftGrab : rightGrab;
         pressHand = LRHand == 0 ? leftPress : rightPress;
         controllerName = LRHand == 0 ? "LeftHand Controller" : "RightHand Controller";
@@ -42,23 +45,31 @@ public class Extinguisher : MonoBehaviour
     {
         currentInteractor = interactor;
 
-        // bool isCorrectObject = (grabInteractable.name == gameObject.name);
-        // bool isRightHand = (currentInteractor.name == controllerName);
-        isGrabbed = true;
+        bool isCorrectObject = (grabInteractable.name == gameObject.name);
+        bool isRightHand = (currentInteractor.name == controllerName);
+        isGrabbed = (isCorrectObject && isRightHand);
     }
  
     void Update() {
         float rightPressIntensity = rightPress.action.ReadValue<float>();
         bool isPress = rightPressIntensity >= 0.3;
 
-        if (isPress && isGrabbed) {
-            extSmoke.SetActive(true);
-            if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out RaycastHit hit, 20f) && hit.collider.TryGetComponent(out Flame flame)) {
-                bool isLit = flame.TryExtinguish(amountExtinguishedPerSecond * Time.deltaTime);
-            } 
-        } else {
-            extSmoke.SetActive(false);
+        if (isGrabbed) {
+            FindObjectOfType<MissionManager>().SetFireExtinguisherPickedUp();
+
+            if (isPress) {
+                extSmoke.SetActive(true);
+                if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out RaycastHit hit, 20f) && hit.collider.TryGetComponent(out Flame flame)) {
+                    bool isLit = flame.TryExtinguish(amountExtinguishedPerSecond * Time.deltaTime);
+                } 
+            } else {
+                extSmoke.SetActive(false);
+            }
         }
+    }
+
+    public void disableGrabHand() {
+        grabHand.action.Disable();
     }
 
     // void OnTriggerEnter(Collider other) {

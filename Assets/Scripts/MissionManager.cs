@@ -4,51 +4,51 @@ using UnityEngine.UI;
 using TMPro;
 
 /**
-    Mission manager for current level only, where all mission managers are managed by Game manager.
+    Mission manager for level 1 only, where all mission managers are managed by Game manager.
 */
 public class MissionManager : MonoBehaviour
 {
     public GameObject missionPanel;
     public TMP_Text missionDesc;
-    public GameObject fireExtinguisher;
     
     public bool isFireExtinguisherPickedUp = false;
     public bool isFlamePutOut = false;
 
     private List<Mission> missions = new List<Mission>();
+    private string[] missionNames = {"Find and grab the fire extinguisher", "Put out the fire"};
+    
 
     void Start() {
-        // Level 1 missions
-        missions.Add(new Mission("Find and grab the fire extinguisher"));
-        missions.Add(new Mission("Put out the fire"));
+        foreach (string missionName in missionNames) {
+            missions.Add(new Mission(missionName));
+        }
 
-        UpdateMissionPanel();
         // Start the timer
         // timerManager.StartTimer();
     }
 
     void Update() {
+        UpdateMissionPanel();
+        
         if (isFireExtinguisherPickedUp && isFlamePutOut) {
-            // Level complete
+            print("level complete");
         }
     }
 
     // Mission 1
     public void SetFireExtinguisherPickedUp()
     {
-        print("fire extinguisher grabbed");
         isFireExtinguisherPickedUp = true;
+        // FindObjectOfType<Extinguisher>().disableGrabHand();
+        Debug.Log("Mission 1 Complete: " + isMissionCompletedById(0));
 
-        print("completed mission 1: " + isMissionCompletedById(0));
     }
 
     // Mission 2
     public void FlamePutOut()
     {
-        print("flame is put out, game ends");
         isFlamePutOut = true;
-
-        print("completed mission 2: " + isMissionCompletedById(1));
+        Debug.Log("Mission 2 Complete: " + isMissionCompletedById(1));
     }
     
     private void UpdateMissionPanel() {
