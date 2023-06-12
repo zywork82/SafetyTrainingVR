@@ -39,13 +39,12 @@ public class MissionManager : MonoBehaviour
     public void SetFireExtinguisherPickedUp()
     {
         isFireExtinguisherPickedUp = true;
-        // FindObjectOfType<Extinguisher>().disableGrabHand();
         Debug.Log("Mission 1 Complete: " + isMissionCompletedById(0));
 
     }
 
     // Mission 2
-    public void FlamePutOut()
+    public void SetFlamePutOut()
     {
         isFlamePutOut = true;
         Debug.Log("Mission 2 Complete: " + isMissionCompletedById(1));
