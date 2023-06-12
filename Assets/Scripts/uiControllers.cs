@@ -12,6 +12,7 @@ public class UIControllers : MonoBehaviour
 
     private void Start() {
         controlsPanel.SetActive(false);
+        flameEnvironment.SetActive(false);
     }
 
     public void StartGame() {

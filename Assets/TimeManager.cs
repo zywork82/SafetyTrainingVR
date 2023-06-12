@@ -40,7 +40,7 @@ public class TimeManager : MonoBehaviour
         // score display
         // score = Mathf.RoundToInt((float)timePassed.TotalSeconds * multiplier);
 
-        print(timePassed);
+        // print(timePassed);
         timerText.text = timePassed.ToString(@"mm\:ss");
     }
 
