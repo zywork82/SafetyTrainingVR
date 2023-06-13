@@ -9,15 +9,21 @@ public class UIControllers : MonoBehaviour
     public GameObject controlsPanel;
     public GameObject trainingStartInterface;
     public GameObject flameEnvironment;
+    public GameObject missionPanel;
+    public GameObject timerText;
 
     private void Start() {
         controlsPanel.SetActive(false);
         flameEnvironment.SetActive(false);
+        missionPanel.SetActive(false);
+        timerText.SetActive(false);
     }
 
     public void StartGame() {
         trainingStartInterface.SetActive(false);
         flameEnvironment.SetActive(true);
+        missionPanel.SetActive(true);
+        timerText.SetActive(true);
     }
 
     public void QuitTraining() {

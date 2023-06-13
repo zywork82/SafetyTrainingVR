@@ -15,7 +15,7 @@ public class MissionManager : MonoBehaviour
     public bool isFlamePutOut = false;
 
     private List<Mission> missions = new List<Mission>();
-    private string[] missionNames = {"Find and grab the fire extinguisher", "Put out the fire"};
+    private string[] missionNames = {"1. Find and grab the fire extinguisher", "2. Put out the fire"};
     
 
     void Start() {

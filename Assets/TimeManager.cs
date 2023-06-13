@@ -38,7 +38,8 @@ public class TimeManager : MonoBehaviour
         timePassed = currTime - initialTime;
 
         // score display
-        // score = Mathf.RoundToInt((float)timePassed.TotalSeconds * multiplier);
+        score = Mathf.RoundToInt((float)timePassed.TotalSeconds * multiplier);
+        scoreText.text = score.ToString();
 
         // print(timePassed);
         timerText.text = timePassed.ToString(@"mm\:ss");

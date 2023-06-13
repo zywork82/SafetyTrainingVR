@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
 {
     private bool isGameStarted = false;
     public GameObject missionPanel;
-    public TimerManager timerManager;
+    public TimeManager timeManager;
     private MissionManager missionManager;
     // private Scene currScene;
 
