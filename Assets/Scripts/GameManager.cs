@@ -12,15 +12,14 @@ public class GameManager : MonoBehaviour
     public TimeManager timeManager;
     public MissionManager missionManager;
     public GameObject trainingEndInterface;
-    public GameObject timerText;
+    public TMP_Text timerText;
+    public TMP_Text scoreText;
+    public TMP_Text completionTimeText;
     // private Scene currScene;
 
     private void Start()
     {
-        // currScene = SceneManager.GetActiveScene();
-        // missionManager = get mission manager and check if mission is all completed, aka level complete
-        // Update the mission panel text initially
-        // UpdateMissionPanelText();
+        
     }
 
     public void RestartScene() {
@@ -30,14 +29,25 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
        if(missionManager.isLevelCompleted()) {
-            print("gamemanager: level is completed");
-            // trainingEndInterface.SetActive(true);
+            // print("gamemanager: level is completed");
+            trainingEndInterface.SetActive(true);
+            // print("trgendcanvas");
             missionPanel.SetActive(false);
-            timerText.SetActive(false);
-       } else {
-        // print("hi");
-       }
-    //    print("exited GM");
-    }
+            // print("missionPanelDisappear");
+            timerText.gameObject.SetActive(false);
+            // print("timerDisappear");
 
+            scoreText.text = timeManager.getScore().ToString();
+            scoreText.gameObject.SetActive(true);
+            // print("score appear");
+            completionTimeText.text = timeManager.getTime().ToString(@"mm\:ss");
+            completionTimeText.gameObject.SetActive(true);
+            // print("complete time appear");
+     }
+    //    } else {
+    //     print("hi");
+    //    }
+    
+
+}
 }

@@ -9,27 +9,27 @@ public class FlameManager : MonoBehaviour
 
     void Update() {
         if (isAllFlamesPutOut()) {
-            print("put out flame");
+            // print("put out flame");
             FindObjectOfType<MissionManager>().SetFlamePutOut();
-            print("HERE");
+            // print("HERE");
         }
     }
 
     private bool isAllFlamesPutOut() {
-        print("A");
+        // print("A");
         isAtLeastOneLit = false;
 
         foreach(GameObject flame in flames) {
             checkIfLit(isAtLeastOneLit, flame.GetComponent<Flame>().isLit);
         }
-         print("B");
+        //  print("B");
         return !isAtLeastOneLit;
     }
 
     private void checkIfLit(bool cumulativeIsLit, bool currIsLit) {
-         print("C");
+        //  print("C");
         isAtLeastOneLit = cumulativeIsLit || currIsLit;
-         print("D");
+        //  print("D");
 
     }
 }

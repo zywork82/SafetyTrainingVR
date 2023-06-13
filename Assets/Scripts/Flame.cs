@@ -10,7 +10,7 @@ public class Flame : MonoBehaviour
     [SerializeField] private ParticleSystem[] flameParticleSystems = new ParticleSystem[0];
 
     float timeLastWatered = 0;
-    [SerializeField] private float regenDelay = 2.5f;
+    [SerializeField] private float regenDelay = 3f;
     [SerializeField] private float regenRate = 0.1f;
 
     public bool isLit = true;
@@ -40,7 +40,7 @@ public class Flame : MonoBehaviour
         timeLastWatered = Time.time;
         currentIntensity -= amount;
         ChangeIntensity();
-        isLit = currentIntensity > 0f;
+        isLit = currentIntensity > -0.3f;
         return isLit;
     }
 
