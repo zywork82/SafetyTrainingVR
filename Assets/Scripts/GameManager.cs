@@ -10,7 +10,9 @@ public class GameManager : MonoBehaviour
     private bool isGameStarted = false;
     public GameObject missionPanel;
     public TimeManager timeManager;
-    private MissionManager missionManager;
+    public MissionManager missionManager;
+    public GameObject trainingEndInterface;
+    public GameObject timerText;
     // private Scene currScene;
 
     private void Start()
@@ -27,7 +29,15 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        // Reference MissionManager.cs
+       if(missionManager.isLevelCompleted()) {
+            print("gamemanager: level is completed");
+            // trainingEndInterface.SetActive(true);
+            missionPanel.SetActive(false);
+            timerText.SetActive(false);
+       } else {
+        // print("hi");
+       }
+    //    print("exited GM");
     }
 
 }

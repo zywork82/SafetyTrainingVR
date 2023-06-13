@@ -22,7 +22,6 @@ public class MissionManager : MonoBehaviour
         foreach (string missionName in missionNames) {
             missions.Add(new Mission(missionName));
         }
-
         // Start the timer
         // timerManager.StartTimer();
     }
@@ -30,9 +29,14 @@ public class MissionManager : MonoBehaviour
     void Update() {
         UpdateMissionPanel();
         
-        if (isFireExtinguisherPickedUp && isFlamePutOut) {
-            print("level complete");
-        }
+        // if (isLevelCompleted()) {
+        //     print("level complete");
+        // }
+ ;   }
+
+    public bool isLevelCompleted(){
+        // print("level complete");
+       return isFireExtinguisherPickedUp && isFlamePutOut;
     }
 
     // Mission 1
@@ -40,7 +44,6 @@ public class MissionManager : MonoBehaviour
     {
         isFireExtinguisherPickedUp = true;
         Debug.Log("Mission 1 Complete: " + isMissionCompletedById(0));
-
     }
 
     // Mission 2
@@ -66,8 +69,10 @@ public class MissionManager : MonoBehaviour
     }
 
     public bool isMissionCompletedById(int Id) {
+        // print(Id + " is " + missionNames[Id]);
         Mission mission = missions.Find(m => m.Id == Id);
         if (mission != null) {
+            // print("hvvmission");
             mission.CompleteMission();
             UpdateMissionPanel();
             // timerManager.StartTimer();
@@ -92,6 +97,7 @@ public class MissionManager : MonoBehaviour
 
         public void CompleteMission()
         {
+            // print("mission id " + Id + " is completed");
             isCompleted = true;
         }
     }

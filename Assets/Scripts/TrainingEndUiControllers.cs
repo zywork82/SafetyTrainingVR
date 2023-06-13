@@ -14,7 +14,6 @@ public class TrainingEndUiControllers : MonoBehaviour
     public GameObject flameEnvironment;
     public GameObject missionPanel;
     public GameObject timerText;
-    public bool isFlamePutOut = false;
 
     private void Start() {
         playerStartPosition = player.transform.position;

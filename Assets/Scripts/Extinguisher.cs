@@ -22,7 +22,7 @@ public class Extinguisher : MonoBehaviour
     private XRGrabInteractable grabInteractable;
     private XRBaseInteractor currentInteractor;
 
-    private bool isGrabbed = false;
+    [SerializeField] private bool isGrabbed = false;
 
     private void Awake()
     {
@@ -52,18 +52,25 @@ public class Extinguisher : MonoBehaviour
  
     void Update() {
         float rightPressIntensity = rightPress.action.ReadValue<float>();
+        print("1");
         bool isPress = rightPressIntensity >= 0.3;
-
+        print("2");
+        print("is grabbed is:" + isGrabbed);
         if (isGrabbed) {
+            print("jiushinile");
             FindObjectOfType<MissionManager>().SetFireExtinguisherPickedUp();
-
+        print("3");
             if (isPress) {
                 extSmoke.SetActive(true);
-                if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out RaycastHit hit, 20f) && hit.collider.TryGetComponent(out Flame flame)) {
+                print("4");
+                if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out RaycastHit hit, 20f) && hit.collider.
+                TryGetComponent(out Flame flame)) {
                     bool isLit = flame.TryExtinguish(amountExtinguishedPerSecond * Time.deltaTime);
+                    print("5");
                 } 
             } else {
                 extSmoke.SetActive(false);
+                print("6");
             }
         }
     }

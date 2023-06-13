@@ -18,7 +18,7 @@ public class Flame : MonoBehaviour
     private void Start() 
     {
         // Initialise each starting intensity
-        print("[Flame.cs] Initialisation");
+        // print("[Flame.cs] Initialisation");
         startIntensities = new float[flameParticleSystems.Length];
         for (int i = 0; i < flameParticleSystems.Length; i++) {
             startIntensities[i] = flameParticleSystems[i].emission.rateOverTime.constant;
