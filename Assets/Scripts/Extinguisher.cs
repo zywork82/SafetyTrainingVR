@@ -52,25 +52,25 @@ public class Extinguisher : MonoBehaviour
  
     void Update() {
         float rightPressIntensity = rightPress.action.ReadValue<float>();
-        print("1");
+        // print("1");
         bool isPress = rightPressIntensity >= 0.3;
-        print("2");
-        print("is grabbed is:" + isGrabbed);
+        // print("2");
+        // print("is grabbed is:" + isGrabbed);
         if (isGrabbed) {
-            print("jiushinile");
+            // print("jiushinile");
             FindObjectOfType<MissionManager>().SetFireExtinguisherPickedUp();
-        print("3");
+        // print("3");
             if (isPress) {
                 extSmoke.SetActive(true);
-                print("4");
+                // print("4");
                 if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out RaycastHit hit, 20f) && hit.collider.
                 TryGetComponent(out Flame flame)) {
                     bool isLit = flame.TryExtinguish(amountExtinguishedPerSecond * Time.deltaTime);
-                    print("5");
+                    // print("5");
                 } 
             } else {
                 extSmoke.SetActive(false);
-                print("6");
+                // print("6");
             }
         }
     }

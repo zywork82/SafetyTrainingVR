@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        
+         
     }
 
     public void RestartScene() {
@@ -36,13 +36,16 @@ public class GameManager : MonoBehaviour
             // print("missionPanelDisappear");
             timerText.gameObject.SetActive(false);
             // print("timerDisappear");
-
+            timeManager.StopTimer();
+            print("timer stopped");
             scoreText.text = timeManager.getScore().ToString();
             scoreText.gameObject.SetActive(true);
             // print("score appear");
             completionTimeText.text = timeManager.getTime().ToString(@"mm\:ss");
             completionTimeText.gameObject.SetActive(true);
             // print("complete time appear");
+            
+
      }
     //    } else {
     //     print("hi");

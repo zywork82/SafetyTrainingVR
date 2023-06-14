@@ -7,8 +7,11 @@ using System;
 
 public class TimeManager : MonoBehaviour
 {
-    //timer component
+    //timer component in game ui
     public TMP_Text timerText;
+
+    //timer component in end canvas
+    public TMP_Text completionTimeText;
     
     //timer settings
     bool TimerActive = false;
@@ -69,6 +72,7 @@ public class TimeManager : MonoBehaviour
     {
         TimerActive = true;
         countdownActive = true;
+        timerText.text =  "";
     }
 
     public void StopTimer()
@@ -88,10 +92,8 @@ public class TimeManager : MonoBehaviour
     }
     // void Update()
     // {
-    //     // if(TimerActive == true){
-    //     //     currentTime = currentTime + Time.deltaTime;
-    //     // }
-
+        
+    // }
     //     //timer display
     //     TimeSpan currTime = new TimeSpan(System.DateTime.Now.Ticks);
     //     timePassed = currTime - initialTime;

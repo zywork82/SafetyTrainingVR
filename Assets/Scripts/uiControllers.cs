@@ -11,6 +11,7 @@ public class UIControllers : MonoBehaviour
     public GameObject flameEnvironment;
     public GameObject missionPanel;
     public GameObject timerText;
+    public TimeManager timeManager;
 
     private void Start() {
         controlsPanel.SetActive(false);
@@ -24,6 +25,10 @@ public class UIControllers : MonoBehaviour
         flameEnvironment.SetActive(true);
         missionPanel.SetActive(true);
         timerText.SetActive(true);
+        timeManager.StartTimer();
+        print("timer has started");
+        timeManager.getTime();
+        print("time gotten");
     }
 
     public void QuitTraining() {
